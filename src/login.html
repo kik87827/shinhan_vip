@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+ @@include('./include/head.html')
+<body class="front_body">
+	<div class="page_wrap single_page_wrap">
+        <div class="single_inner_wrap">
+            <div class="single_inner_item">
+                <div class="single_logo_row">
+                    <h1 class="single_logo">
+                        <img src="./assets/images/login_logo.png" alt="PREMIER BLUE">
+                        <p class="single_logo_text">MEMBERS</p>
+                    </h1>
+                </div>
+                <div class="single_form_row">
+                    <div class="single_form_item">
+                        <p class="single_form_legend">고객 로그인</p>
+                        <div class="single_field_wrap">
+                            <div class="single_input_group">
+                                <div class="form_input_wrap">
+                                    <input type="text" class="form_input" placeholder="nh(전화번호 8자리)" maxLength="8">
+                                </div>
+                                <div class="form_input_wrap">
+                                    <input type="text" class="form_input" placeholder="nh(전화번호 4자리)" maxLength="4">
+                                </div>
+                            </div>
+                            <div class="single_btn_wrap">
+                                <a href="#" class="btn_single_box">
+                                    <i class="ico rock"></i>
+                                    <span class="btn_single_box_text">LOGIN</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single_form_item">
+                        <p class="single_form_legend">PB 로그인</p>
+                        <div class="single_field_wrap">
+                            <div class="single_input_group">
+                                <div class="form_input_wrap">
+                                    <input type="text" class="form_input" placeholder="nh(전화번호 8자리)" maxLength="8">
+                                </div>
+                                <div class="form_input_wrap">
+                                    <input type="text" class="form_input" placeholder="nh(전화번호 4자리)" maxLength="4">
+                                </div>
+                            </div>
+                            <div class="single_btn_wrap">
+                                <a href="#" class="btn_single_box">
+                                    <i class="ico rock"></i>
+                                    <span class="btn_single_box_text">LOGIN</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single_clause_row">
+                    <ul class="indent_para_list">
+                        <li>
+                            <div class="indent_para">
+                                <span class="indent_bullet">*</span>
+                                <span class="indent_liquid">아이디는 010을 제외한 전화번호 8자리입니다.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="indent_para">
+                                <span class="indent_bullet">*</span>
+                                <span class="indent_liquid">비밀번호는 핸드폰 번호 끝 4자리입니다.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="single_btn_row">
+                    <a href="#" class="btn_submit_box primary medium" id="btn_idpw_call"><span class="btn_submit_box_text">아이디/비밀번호 찾기</span></a>
+                </div>
+            </div>
+        </div>
+        <!-- popup -->
+		<div class="popup_wrap" id="loginPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item single_type">
+				<div class="popup_contents_row">
+					<div class="popup_cont_block">
+                        <p class="popup_cont_message">아이디와 비밀번호를 잊어버리셨을 경우 <br>고객 센터로 연락해주시기 바랍니다.</p>
+                    </div>
+					<div class="popup_cont_block">
+                        <p class="popup_cont_emp">
+                            VIP 멤버십 고객센터 : 02.517.7813<br>
+                            운영시간 : 09:00 ~ 18:00 <span class="cont_emp_sub">(주말 및 공휴일 제외)</span>
+                        </p>
+                    </div>
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+		<!-- // popup -->
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // 인스턴스 선언
+                let loginPopup = new DesignPopup({
+                    selector: "#loginPopup",
+                    beforeCallback() {
+
+                    },
+                    callback() {
+
+                    },
+                    closeCallback() {}
+                });
+                
+                // 퍼블 확인용
+                let url = window.location.href.split('?')[1];
+                let url_2 = url !== undefined ? url.split('#')[0] : null;
+    
+                if (url_2 === "popup") {
+                    loginPopup.popupShow(); // show
+                }
+
+                document.querySelector("#btn_idpw_call").addEventListener("click",(e)=>{
+                    e.preventDefault();
+                    loginPopup.popupShow(); // show
+                });
+            });
+
+        </script>
+	</div>
+</body>
+
+</html>
