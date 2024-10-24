@@ -18,22 +18,19 @@
 
 <body class="front_body">
 	<div class="page_wrap">
-		<div class="">
-
-		</div>
+		<a href="#" class="btn_guide_box" id="btnCall">모달 호출</a>
 		<!-- popup -->
-		<div class="popup_wrap" id="loginPopup">
+		<div class="popup_wrap" id="sampleModalPopup">
 			<div class="bg_dim"></div>
-			<div class="popup_item single_type">
-				<div class="popup_contents_row">
-					<div class="popup_cont_block">
-						<p class="popup_cont_message">아이디와 비밀번호를 잊어버리셨을 경우 <br>고객 센터로 연락해주시기 바랍니다.</p>
+			<div class="popup_item modal_type">
+				<div class="popup_modal_box">
+					<div class="popup_modal_para_wrap">
+						<p class="popup_modal_para">입력한 정보가 잘못되었습니다. <br>다시 확인해주세요.</p>
 					</div>
-					<div class="popup_cont_block">
-						<p class="popup_cont_emp">
-							VIP 멤버십 고객센터 : 02.517.7813<br>
-							운영시간 : 09:00 ~ 18:00 <span class="cont_emp_sub">(주말 및 공휴일 제외)</span>
-						</p>
+					<div class="btn_bottom_wrap">
+						<!-- close_trigger 있을시 닫기 -->
+						<a href="#" class="btn_submit_box primary close_trigger"><span class="btn_submit_box_text">확인</span></a>
+						<a href="#" class="btn_submit_box close_trigger"><span class="btn_submit_box_text">취소</span></a>
 					</div>
 				</div>
 				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
@@ -44,8 +41,8 @@
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
 				// 인스턴스 선언
-				let loginPopup = new DesignPopup({
-					selector: "#loginPopup",
+				let sampleModalPopup = new DesignPopup({
+					selector: "#sampleModalPopup",
 					beforeCallback() {
 
 					},
@@ -54,18 +51,12 @@
 					},
 					closeCallback() {}
 				});
+				sampleModalPopup.popupShow(); // show
+				// sampleModalPopup.popupHide(); // hide
 
-				// 퍼블 확인용
-				let url = window.location.href.split('?')[1];
-				let url_2 = url !== undefined ? url.split('#')[0] : null;
-
-				if (url_2 === "popup") {
-					loginPopup.popupShow(); // show
-				}
-
-				document.querySelector("#btn_idpw_call").addEventListener("click", (e) => {
-					e.preventDefault();
-					loginPopup.popupShow(); // show
+				// event
+				document.querySelector("#btnCall").addEventListener("click", () => {
+					sampleModalPopup.popupShow(); // show
 				});
 			});
 		</script>

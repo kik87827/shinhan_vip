@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="ko">
- @@include('./include/head.html')
+@@include('./include/head.html')
+
 <body class="front_body">
-	<div class="page_wrap">
+    <div class="page_wrap">
         @@include('./include/header.html')
-		<section class="middle_section">
-			<div class="mv_contents">
+        <section class="middle_section">
+            <div class="mv_contents">
                 <div class="mv_inner_wrap">
                     <div class="mv_logo_row"><img src="./assets/images/mv_logo.png" alt=""></div>
                     <div class="mv_copy_row">
                         <p class="mv_copy">
                             <strong>Premier Blue Members</strong>는 <br>
                             최상위 고객을 선정하여 고객 한 분, 한 분의 라이프 스타일에 맞게 <br>
-                            프리미엄 혜택과 서비스를 제공하는 VVIP 멤버십 서비스 입니다.   
+                            프리미엄 혜택과 서비스를 제공하는 VVIP 멤버십 서비스 입니다.
                         </p>
                     </div>
                     <div class="mv_banner_row">
@@ -28,7 +29,7 @@
                     </div>
                 </div>
             </div>
-			<div class="mc_contents">
+            <div class="mc_contents">
                 <div class="mc_inner_wrap">
                     <div class="customer_card_box">
                         <div class="customer_card_main">
@@ -41,12 +42,52 @@
                     </div>
                 </div>
             </div>
-		</section>
-		@@include('./include/footer.html')
-        
-        <!-- survey -->
-        <!-- // survey -->
-	</div>
+        </section>
+        @@include('./include/footer.html')
+
+
+        <!-- popup -->
+        <div class="popup_wrap" id="mainPopup">
+            <div class="bg_dim"></div>
+            <div class="popup_item">
+                <div class="popup_contents_row">
+                    팝업
+                </div>
+                <a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+            </div>
+        </div>
+        <!-- // popup -->
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // 인스턴스 선언
+                let mainPopup = new DesignPopup({
+                    selector: "#mainPopup",
+                    beforeCallback() {
+
+                    },
+                    callback() {
+
+                    },
+                    closeCallback() { }
+                });
+
+                // 퍼블 확인용
+                let url = window.location.href.split('?')[1];
+                let url_2 = url !== undefined ? url.split('#')[0] : null;
+
+                if (url_2 === "popup") {
+                    mainPopup.popupShow(); // show
+                }
+
+                /* document.querySelector("#btn_idpw_call").addEventListener("click", (e) => {
+                    e.preventDefault();
+                    mainPopup.popupShow(); 
+                }); */
+            });
+
+        </script>
+    </div>
 </body>
 
 </html>

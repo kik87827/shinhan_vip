@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+@@include('./include/head.html')
+
+<body class="front_body">
+	<div class="page_wrap">
+		<a href="#" class="btn_guide_box" id="btnCall">모달 호출</a>
+		<!-- popup -->
+		<div class="popup_wrap" id="sampleModalPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item modal_type">
+				<div class="popup_modal_box">
+                    <div class="popup_modal_para_wrap">
+                        <p class="popup_modal_para">입력한 정보가 잘못되었습니다. <br>다시 확인해주세요.</p>
+                    </div>
+                    <div class="btn_bottom_wrap">
+                        <!-- close_trigger 있을시 닫기 -->
+                        <a href="#" class="btn_submit_box primary close_trigger"><span class="btn_submit_box_text">확인</span></a>
+                        <a href="#" class="btn_submit_box close_trigger"><span class="btn_submit_box_text">취소</span></a>
+                    </div>
+                </div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+		<!-- // popup -->
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				// 인스턴스 선언
+				let sampleModalPopup = new DesignPopup({
+					selector: "#sampleModalPopup",
+					beforeCallback() {
+
+					},
+					callback() {
+
+					},
+					closeCallback() {}
+				});
+				sampleModalPopup.popupShow(); // show
+				// sampleModalPopup.popupHide(); // hide
+
+				// event
+				document.querySelector("#btnCall").addEventListener("click", () => {
+					sampleModalPopup.popupShow(); // show
+				});
+			});
+		</script>
+	</div>
+</body>
+
+</html>

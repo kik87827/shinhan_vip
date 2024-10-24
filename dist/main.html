@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>NH투자증권 VIP</title>
+	<title>신한라이프 VIP</title>
 	<link href="./assets/css/reset.css" rel="stylesheet">
 	<link href="./assets/css/swiper.min.css" rel="stylesheet">
 	<link href="./assets/css/layout.css" rel="stylesheet">
@@ -99,8 +99,47 @@
 
 		</footer>
 
-		<!-- survey -->
-		<!-- // survey -->
+
+		<!-- popup -->
+		<div class="popup_wrap" id="mainPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item">
+				<div class="popup_contents_row">
+					팝업
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+		<!-- // popup -->
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				// 인스턴스 선언
+				let mainPopup = new DesignPopup({
+					selector: "#mainPopup",
+					beforeCallback() {
+
+					},
+					callback() {
+
+					},
+					closeCallback() {}
+				});
+
+				// 퍼블 확인용
+				let url = window.location.href.split('?')[1];
+				let url_2 = url !== undefined ? url.split('#')[0] : null;
+
+				if (url_2 === "popup") {
+					mainPopup.popupShow(); // show
+				}
+
+				/* document.querySelector("#btn_idpw_call").addEventListener("click", (e) => {
+				    e.preventDefault();
+				    mainPopup.popupShow(); 
+				}); */
+			});
+		</script>
 	</div>
 </body>
 

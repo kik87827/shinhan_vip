@@ -1,1 +1,29 @@
 @charset "utf-8";
+
+
+/* scrollbar */
+html:not(.touchmode) ::-webkit-scrollbar {
+    width: 20px;
+}
+
+html:not(.touchmode) ::-webkit-scrollbar-thumb {
+    background-color: #705ebf;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 5px solid transparent;
+}
+
+html:not(.touchmode) ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px transparent;
+}
+
+@media (max-width:767px){
+    html:not(.touchmode) ::-webkit-scrollbar {
+        width: 10px;
+    }    
+    html:not(.touchmode) ::-webkit-scrollbar-thumb {
+        border-width:3px;
+    }
+}

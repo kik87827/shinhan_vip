@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- popup -->
+    <div class="popup_wrap" id="mainPopup">
+        <div class="bg_dim"></div>
+        <div class="popup_item">
+            <div class="popup_contents_row">
+                팝업
+            </div>
+            <a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+        </div>
+    </div>
+    <!-- // popup -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 인스턴스 선언
+            let appPopup = new DesignPopup({
+                selector: "#appPopup",
+                beforeCallback() {
+
+                },
+                callback() {
+
+                },
+                closeCallback() { }
+            });
+
+            // 퍼블 확인용
+            let url = window.location.href.split('?')[1];
+            let url_2 = url !== undefined ? url.split('#')[0] : null;
+
+            if (url_2 === "popup") {
+                appPopup.popupShow(); // show
+            }
+
+            /* document.querySelector("#btn_idpw_call").addEventListener("click", (e) => {
+                e.preventDefault();
+                mainPopup.popupShow(); 
+            }); */
+        });
+
+    </script>
+</body>
+
+</html>
