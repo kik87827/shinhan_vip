@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "gulpfile.js",
   "scripts": {
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "serve": "gulp"
   },
   "author": "",
   "license": "ISC",
