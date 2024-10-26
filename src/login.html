@@ -4,8 +4,53 @@
 
 <body class="front_body">
     <div class="page_wrap">
-        <div class="">
-
+        <div class="bg_single_global" style="background-image:url(./assets/images/bg_login.jpg)"></div>
+        <div class="single_container">
+            <div class="single_inner">
+                <div class="single_box">
+                    <div class="title_row"><h1 class="single_title">로그인</h1></div>
+                    <div class="contents_row">
+                        <form>
+                            <div class="field_brick">
+                                <ul class="field_input_list">
+                                    <li>
+                                        <div class="finput_item">
+                                            <i class="ico shape_id"></i>
+                                            <input type="text" class="finput">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="finput_item">
+                                            <i class="ico shape_pw"></i>
+                                            <input type="password" class="finput">
+                                            <i class="ico shape_key"></i>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="props_brick">
+                                <ul class="props_item_list">
+                                    <li>
+                                        <div class="props_item">
+                                            <input type="checkbox" class="props_form" id="id_item">
+                                            <label for="id_item" class="props_label">로그인 정보저장</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="submit_brick">
+                                <a href="#" class="btn_field_submit">로그인</a>
+                            </div>
+                            <div class="else_btn_brick">
+                                <a href="#" class="btn_field_text">로그인 정보확인</a>
+                            </div>
+                            <div class="bottom_logo_brick">
+                                <img src="./assets/images/login_logo.png" alt="신한라이프">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- popup -->
         <div class="popup_wrap" id="loginPopup">
@@ -49,10 +94,10 @@
                     loginPopup.popupShow(); // show
                 }
 
-                document.querySelector("#btn_idpw_call").addEventListener("click", (e) => {
+                /* document.querySelector("#btn_idpw_call").addEventListener("click", (e) => {
                     e.preventDefault();
                     loginPopup.popupShow(); // show
-                });
+                }); */
             });
 
         </script>

@@ -1,20 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+@@include('./include/head.html')
+<body class="front_body">
+        <div class="page_wrap">
+        @@include('./include/header.html')
+		<section class="middle_section">
+			내용이 들어갑니다.
+		</section>
+		@@include('./include/footer.html')
+	</div>
+    <script>menuRock("[name='gnb_solon']");</script>
 
-<body>
     <!-- popup -->
-    <div class="popup_wrap" id="mainPopup">
+    <div class="popup_wrap" id="appPopup">
         <div class="bg_dim"></div>
         <div class="popup_item">
+            <div class="popup_title_row">
+                <h3 class="popup_title">신청하기</h3>
+            </div>
             <div class="popup_contents_row">
-                팝업
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용
+            </div>
+            <div class="popup_btn_row btn_bottom_wrap">
+                <!-- close_trigger 있을시 닫기 -->
+                <a href="#" class="btn_submit_box primary close_trigger"><span class="btn_submit_box_text">확인</span></a>
+                <!-- <a href="#" class="btn_submit_box close_trigger"><span class="btn_submit_box_text">취소</span></a> -->
+            </div>
+            <a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+        </div>
+    </div>
+    <div class="popup_wrap" id="endPopup">
+        <div class="bg_dim"></div>
+        <div class="popup_item">
+            <div class="popup_title_row">
+                <h3 class="popup_title">신청완료</h3>
+            </div>
+            <div class="popup_contents_row">
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용<br>
+                내용
+            </div>
+            <div class="popup_btn_row btn_bottom_wrap">
+                <!-- close_trigger 있을시 닫기 -->
+                <a href="#" class="btn_submit_box primary close_trigger"><span class="btn_submit_box_text">확인</span></a>
+                <!-- <a href="#" class="btn_submit_box close_trigger"><span class="btn_submit_box_text">취소</span></a> -->
             </div>
             <a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
         </div>
@@ -34,6 +142,16 @@
                 },
                 closeCallback() { }
             });
+            let endPopup = new DesignPopup({
+                selector: "#endPopup",
+                beforeCallback() {
+
+                },
+                callback() {
+
+                },
+                closeCallback() { }
+            });
 
             // 퍼블 확인용
             let url = window.location.href.split('?')[1];
@@ -41,6 +159,18 @@
 
             if (url_2 === "popup") {
                 appPopup.popupShow(); // show
+            }else if(url_2 === "popup_alert"){
+                designModal({
+                    message : "입력한 정보가 잘못되었습니다.<br>다시 확인해주세요.",
+                    okcallback(){
+                        console.log('okcallback');
+                    },
+                    cancelcallback(){
+                        console.log('cancelcallback');
+                    }
+                });
+            }else if(url_2 === "popup_end"){
+                endPopup.popupShow(); // show
             }
 
             /* document.querySelector("#btn_idpw_call").addEventListener("click", (e) => {

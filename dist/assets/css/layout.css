@@ -30,7 +30,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 
 
 /* layout */
-.page_wrap{display:flex; flex-direction: column; min-height:calc(100vh - 115px);}
+.page_wrap{/* display:flex; flex-direction: column; *//*  min-height:calc(100vh - 115px); */ min-width:280px;}
 .header_section{background:#fff;position:fixed;top:0;left:0;width:100%;z-index:10;box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.25);}
 
 .header_inner{position:relative; box-sizing: border-box; max-width:1200px; margin:0 auto; padding:0 30px;}
@@ -57,7 +57,7 @@ li.active .nav_item_text,
 .nav_item:hover .nav_item_text{color:#705ebf;}
 
 .nav_item{display:flex; flex-direction: column; justify-content: center; align-items: center; height:100%;}
-.nav_item_text{font-family: 'OneShinhan';font-size:20px; color:#666666; font-weight:900; letter-spacing: -0.5px;}
+.nav_item_text{font-family: 'OneShinhan';font-size:20px; color:#666666; font-weight:900; letter-spacing: -0.5px; text-align: center; line-height:1.2;}
 
 
 
@@ -137,4 +137,51 @@ li.active .nav_item_text,
     .bottom_guide_item_list > li:after{display:none;}
     .bottom_guide_item{ font-size:11px; }
     .bottom_copyright{font-size:11px;}
+}
+
+
+
+/* single */
+.bg_single_global{position:fixed;top:0;left:0;width:100%;height:100%;background-position: 50% 50%;background-size:cover;background-repeat:no-repeat;}
+.single_container{position:relative; z-index:5;display:flex; min-height:calc(var(--vh, 1vh) * 100); justify-content: center; align-items: center;}
+.single_inner{padding:50px; width:100%; box-sizing: border-box;}
+.single_box{background:#fff; padding:40px 23px; border-radius:18px; border:1px solid #dddddd;max-width:400px;margin:0 auto; text-align: center;}
+.single_title{font-family: 'OneShinhan'; font-weight:700; letter-spacing: -0.5px; font-size:32px;}
+.single_box .field_brick{}
+.single_box .props_brick{}
+.single_box .submit_brick{}
+.single_box .else_btn_brick{}
+.single_box .bottom_logo_brick{}
+.single_box .bottom_logo_brick > img{vertical-align: top;max-width:146px;}
+.single_box .title_row{}
+.single_box .contents_row{}
+
+.field_input_list{}
+.field_input_list > li{}
+.field_input_list > li:last-of-type{}
+
+.finput_item{}
+.finput_item .ico{}
+.finput_item .ico.shape_id{}
+.finput_item .ico.shape_pw{}
+.finput_item .ico.shape_key{}
+input.finput{}
+
+.props_item_list{}
+.props_item_list > li{}
+.props_item_list > li:last-of-type{}
+
+.props_item{}
+input.props_form{}
+input.props_form:checked + .props_label{}
+.props_label{}
+
+.btn_field_submit{}
+.btn_field_text{}
+
+@media (max-width:767px){
+    .single_inner{padding:30px 20px;}
+    .single_box{ padding:30px 15px; border-radius:10px;}
+    .single_title{font-size:18px;}
+    .single_box .bottom_logo_brick > img{max-width:100px;}
 }

@@ -1,9 +1,19 @@
 window.addEventListener("DOMContentLoaded", () => {
   commonInit();
   layoutFunc();
+  // 최초 로드 시 호출
+  setVhProperty();
+  // 창 크기가 변경될 때마다 호출
+  window.addEventListener('resize', setVhProperty);
 });
 window.addEventListener("load", () => {
 });
+
+function setVhProperty() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
 
 $(function () {
   //reformFunc();
@@ -25,7 +35,7 @@ function layoutFunc() {
     page_wrap.removeAttribute("style");
     page_wrap.style.paddingTop = header_section.getBoundingClientRect().height + "px";
     let headerHeight = header_section.getBoundingClientRect().height;
-    page_wrap.setAttribute("style",`min-height:calc(100vh - ${headerHeight}px); padding-top: ${headerHeight}px`)
+    page_wrap.setAttribute("style",`padding-top: ${headerHeight}px`)
   }
   function mbTotal() {
     var touchstart = "ontouchstart" in window;
