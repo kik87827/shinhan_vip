@@ -1,6 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
   commonInit();
   layoutFunc();
+  formFunc();
   // 최초 로드 시 호출
   setVhProperty();
   // 창 크기가 변경될 때마다 호출
@@ -367,5 +368,50 @@ function designModal(option) {
       modal_item.classList.remove("active");
       modal_item.remove();
     }, 500);
+  }
+}
+
+
+function formFunc(){
+  const finput = document.querySelectorAll(".finput");
+  if(!!finput){
+    finput.forEach((dom)=>{
+      dom.addEventListener("focusin",(e)=>{
+        const thisItem = e.currentTarget;
+        const thisParent = thisItem.closest(".finput_item");
+        thisParent.classList.add("focus");
+      });
+      dom.addEventListener("focusout",(e)=>{
+        const thisItem = e.currentTarget;
+        const thisParent = thisItem.closest(".finput_item");
+        thisParent.classList.remove("focus");
+      });
+    })
+  }
+}
+
+
+function mainContentsGap(){
+  const mc_item = document.querySelectorAll(".mc_item");
+  const mc_gap = document.querySelector(".mc_gap");
+
+  action();
+  window.addEventListener("resize",()=>{
+    action();
+  })
+
+  function action(){
+    mc_gap.style.removeProperty("height");
+    mc_gap.style.height = mcItemValue() + "px";
+  }
+
+  function mcItemValue(){
+    let dataArray = [];
+    if(!!mc_item){
+      mc_item.forEach((item)=>{
+        dataArray.push(item.getBoundingClientRect().height);
+      });
+    }
+    return Math.max.apply(null,dataArray)/2;
   }
 }

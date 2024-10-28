@@ -25,7 +25,7 @@
 					<div class="header_util_wrap">
 						<ul class="header_util_list">
 							<li><span class="header_util_para">Super Special 김신한 고객님</span></li>
-							<li><a href="#" class="header_util_menu">고객정보</a></li>
+							<li><a href="javascript:;" name="btn_customer_data" class="header_util_menu">고객정보</a></li>
 						</ul>
 					</div>
 				</div>
@@ -49,7 +49,7 @@
 					<div class="mbutil_row">
 						<ul class="mbutil_hlist">
 							<li><a href="#" class="mbutil member_layer_call"><strong>Super Special 김신한 고객님</strong></a></li>
-							<li><a href="#" class="mbutil">고객정보</a></li>
+							<li><a href="javascript:;" name="btn_customer_data" class="mbutil">고객정보</a></li>
 						</ul>
 					</div>
 					<div class="mbmenu_row">
@@ -90,7 +90,23 @@
 				</div>
 			</div>
 			<div class="mc_contents">
-				메인 컨텐츠
+				<ul class="mc_item_list">
+					<li>
+						<a href="#" class="mc_item">
+							<img src="./assets/images/bg_main_banner.jpg" alt="">
+							<div class="mc_item_textcontent">
+								<div class="top_textrow">
+									<p class="mc_banner_primary">SOL ON 우수고객 서비스</p>
+									<p class="mc_banner_sub">프리미엄 기프트(택1)</p>
+								</div>
+								<div class="bottom_textrow">
+									<span class="btn_mc_item">바로가기</span>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<div class="mc_gap"></div>
 			</div>
 		</section>
 		<footer class="footer_section">
@@ -111,7 +127,7 @@
 
 
 		<!-- popup -->
-		<div class="popup_wrap" id="mainPopup">
+		<div class="popup_wrap" id="customerPopup">
 			<div class="bg_dim"></div>
 			<div class="popup_item">
 				<div class="popup_title_row">
@@ -159,8 +175,8 @@
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
 				// 인스턴스 선언
-				let mainPopup = new DesignPopup({
-					selector: "#mainPopup",
+				let customerPopup = new DesignPopup({
+					selector: "#customerPopup",
 					beforeCallback() {
 
 					},
@@ -175,13 +191,21 @@
 				let url_2 = url !== undefined ? url.split('#')[0] : null;
 
 				if (url_2 === "popup") {
-					mainPopup.popupShow(); // show
+					customerPopup.popupShow(); // show
 				}
 
-				/* document.querySelector("#btn_idpw_call").addEventListener("click", (e) => {
-				    e.preventDefault();
-				    mainPopup.popupShow(); 
-				}); */
+
+				let btn_customer_data = document.querySelectorAll("[name='btn_customer_data']");
+				if (!!btn_customer_data) {
+					btn_customer_data.forEach((item) => {
+						item.addEventListener("click", (e) => {
+							customerPopup.popupShow();
+						})
+					});
+				}
+			});
+			window.addEventListener("load", () => {
+				mainContentsGap();
 			});
 		</script>
 	</div>
