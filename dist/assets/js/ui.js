@@ -16,8 +16,8 @@ function setVhProperty() {
 }
 
 
-$(function () {
-  //reformFunc();
+$(function() {
+  reformFunc();
 });
 
 function layoutFunc() {
@@ -442,4 +442,54 @@ function responMaxTable(){
       })
     }
   }
+}
+
+function responMaxTableView(){
+  let has_app_form = document.querySelectorAll(".has_app_form");
+  action();
+  window.addEventListener("resize",()=>{
+    action();
+  });
+
+  function action(){
+    if(!!has_app_form){
+      
+      has_app_form.forEach((target)=>{
+        const thisTarget = target;
+        const thisElement = thisTarget.querySelectorAll(".fv_key");
+        const thisArray = [];
+        
+        thisElement.forEach((elm)=>{
+          elm.style.removeProperty("width");
+          thisArray.push(elm.getBoundingClientRect().width);
+        });
+        thisElement.forEach((elm)=>{
+          elm.style.width = Math.max.apply(null,thisArray) + "px";
+        });
+      })
+    }
+  }
+}
+
+
+
+function reformFunc(){
+	var $resitem = $("[data-pcwid]");
+	var $resitem2 = $("[data-pcflex]");
+	$(window).on("resize",function(){
+		$resitem.each(function(){
+			if($(window).width()<=767){
+				$(this).css({"width":""});
+			}else{
+				$(this).css({ "width": $(this).attr("data-pcwid")});
+			}
+		});
+		$resitem2.each(function(){
+			if($(window).width()<=767){
+				$(this).css({"flex-basis":""});
+			}else{
+				$(this).css({ "flex-basis": $(this).attr("data-pcflex")});
+			}
+		});
+	}).resize();
 }

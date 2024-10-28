@@ -15,57 +15,182 @@
     <!-- popup -->
     <div class="popup_wrap" id="appPopup">
         <div class="bg_dim"></div>
-        <div class="popup_item">
+        <div class="popup_item full_type">
             <div class="popup_title_row">
                 <h3 class="popup_title">신청하기</h3>
             </div>
             <div class="popup_contents_row">
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용<br>
-                내용
+                <div class="arch_block_wrap has_app_form">
+                    <div class="arch_block">
+                        <div class="arch_title_row">
+							<h4 class="arch_title"><span class="arch_title_text">상품정보</span></h4>
+						</div>
+                        <div class="arch_contents">
+                            <div class="product_summary_wrap">
+                                <div class="product_summary_img">
+                                    <img src="./assets/images/temp_app_thumnail.png" alt="">
+                                </div>
+                                <div class="product_summary_spec">
+                                    <h3 class="product_spec_title">명품 한우세트 ‘암소NO.09’ & 발뮤다 플레이트 프로</h3>
+                                    <div class="product_sum_list_wrap">
+                                        <div class="product_sum_key_wrap"><span class="product_sum_key">상품구성</span></div>
+                                        <ul class="product_sum_list">
+                                            <li>명품 한우<br>(등심 0.6kg / 살치 0.6kg)</li>
+                                            <li>발뮤다 플레이트 프로</li>
+                                            <li>그리들&커버 세트</li>
+                                            <li>프로 전용 케이스</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arch_block">
+                        <div class="arch_title_row">
+							<h4 class="arch_title"><span class="arch_title_text">신청자(고객)</span></h4>
+						</div>
+                        <div class="arch_contents">
+                            <div class="form_view_table_wrap">
+                                <table class="form_view_table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="col"><span class="fv_key">고객명</span></th>
+                                            <td><span class="fv_value">김*한</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col"><span class="fv_key">연락처</span></th>
+                                            <td><span class="fv_value">010-1234-5678</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="form_add_else_wrap">
+                                <div class="props_item type2">
+                                    <input type="checkbox" class="props_form_orgin" id="props_form_check">
+                                    <label for="props_form_check" class="props_form_label"><span class="props_form_label_text">신청자 본인이 받으실 경우</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arch_block">
+                        <div class="arch_title_row">
+							<h4 class="arch_title"><span class="arch_title_text">배송정보</span></h4>
+						</div>
+                        <div class="arch_contents">
+                            <div class="form_view_table_wrap">
+                                <table class="form_view_table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="col"><span class="fv_key">받으시는 분</span></th>
+                                            <td><input type="text" class="form_input" data-pcwid="120" style="width:120px;"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col"><span class="fv_key">연락처</span></th>
+                                            <td>
+                                                <ul class="inform_item_list">
+                                                    <li><input type="text" class="form_input" data-pcwid="120" style="width:120px;"></li>
+                                                    <li class="else"><span class="inform_else">-</span></li>
+                                                    <li><input type="text" class="form_input" data-pcwid="120" style="width:120px;"></li>
+                                                    <li class="else"><span class="inform_else">-</span></li>
+                                                    <li><input type="text" class="form_input" data-pcwid="120" style="width:120px;"></li>
+                                                </ul>
+                                                <p class="indent_para">
+                                                    <span class="indent_bullet">※</span>
+                                                    <span class="indent_liquid">연락처가 변경된 경우 새로운 연락처를 입력해주세요.</span>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col"><span class="fv_key">주소</span></th>
+                                            <td>
+                                               <div class="td_inner_block">
+                                                    <ul class="inform_item_list type2">
+                                                        <li><input type="text" class="form_input" data-pcwid="120" style="width:120px;"></li>
+                                                        <li><button class="btn_inform_box">주소찾기</button></li>
+                                                    </ul>
+                                               </div>
+                                               <div class="td_inner_block">
+                                                    <ul class="inform_item_list type2 liquid_type">
+                                                        <li><input type="text" class="form_input"></li>
+                                                        <li><input type="text" class="form_input"></li>
+                                                    </ul>
+                                               </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col"><span class="fv_key">배송시 <br>요청사항</span></th>
+                                            <td>
+                                                <textarea rows="10" cols="10" class="fv_ta"></textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <ul class="clause_item_list">
+                                <li>
+                                    <p class="indent_para">
+                                        <span class="indent_bullet">※</span>
+                                        <span class="indent_liquid">프리미엄기프트 신청, 취소시, 신청자, FC, 받으시는 분에게 안내문자가 발송됩니다.</span>
+                                    </p>
+                                </li>
+                            </ul>
+
+                            <div class="terms_guide_wrap">
+                                <div class="terms_guide_block">
+                                    <div class="terms_guide_title">서비스 이행을 위한 개인정보 재 위탁 동의 안내</div>
+                                    <div class="terms_guide_contents">
+                                        <ul class="terms_indent_list">
+                                            <li>
+                                                <div class="terms_indent_item">
+                                                    <span class="terms_indent_bullet">-</span>
+                                                    <span class="terms_indent_liquid">위탁 받는 업체: ㈜머스트브랜딩, 주식회사 기뜬정, ㈜드림필드 코리아, 안나스낵, 주식회사 
+                                                        이지마켓, 한화갤러리아㈜, 농업회사법인 주식회사 리틀에이커, 이음, ㈜세원정밀</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="terms_indent_item">
+                                                    <span class="terms_indent_bullet">-</span>
+                                                    <span class="terms_indent_liquid">개인정보의 수집·이용 목적: 위탁서비스 제공에 관한 계약 이행(서비스 이용 시 본인확인, 물품배송, 분쟁조정을 위한 기록보존, 불만 및 민원처리, 고지사항 등)</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="terms_indent_item">
+                                                    <span class="terms_indent_bullet">-</span>
+                                                    <span class="terms_indent_liquid">수집하려는 개인정보의 항목: 성명, 주소, 연락처</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="terms_indent_item">
+                                                    <span class="terms_indent_bullet">-</span>
+                                                    <span class="terms_indent_liquid">개인정보의 보유 및 이용 기간: 배송 후 1년 내 파기</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="terms_indent_item">
+                                                    <span class="terms_indent_bullet">-</span>
+                                                    <span class="terms_indent_liquid">고객님께서는 개인정보 수집 및 이용에 대한 동의를 거부할 권리가 있으며, 동의하지 않을 시 
+                                                        감사서비스 중 감사 선물 배송 서비스를 받으실 수 없습니다.
+                                                        단, 기본적으로 제공되는 서비스는 정상적으로 이용이 가능합니다.</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="terms_props_wrap">
+                                        <div class="props_item type3">
+                                            <input type="checkbox" class="props_form_orgin" id="terms_guide_01">
+                                            <label for="terms_guide_01" class="props_form_label">개인정보 재 위탁에 동의합니다.</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="popup_btn_row btn_bottom_wrap">
                 <!-- close_trigger 있을시 닫기 -->
-                <a href="#" class="btn_submit_box primary close_trigger"><span class="btn_submit_box_text">확인</span></a>
-                <!-- <a href="#" class="btn_submit_box close_trigger"><span class="btn_submit_box_text">취소</span></a> -->
+                <a href="#" class="btn_submit_box primary close_trigger"><span class="btn_submit_box_text">신청하기</span></a>
+                <a href="#" class="btn_submit_box close_trigger"><span class="btn_submit_box_text">취소</span></a>
             </div>
             <a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
         </div>
@@ -150,7 +275,7 @@
             let appPopup = new DesignPopup({
                 selector: "#appPopup",
                 beforeCallback() {
-
+                    responMaxTableView();
                 },
                 callback() {
 
