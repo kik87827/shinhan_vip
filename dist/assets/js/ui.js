@@ -276,12 +276,12 @@ function designModal(option) {
 
   if (option.modaltype === "confirm") {
     btnHTML = `
-    <a href="#" class="btn_modal_submit primary okcall"><span class="btn_modal_submit_text">${okTextNode}</span></a>
-      <a href="#" class="btn_modal_submit cancelcall"><span class="btn_modal_submit_text">${cancelTextNode}</span></a>
+    <a href="javascript:;" class="btn_modal_submit primary okcall"><span class="btn_modal_submit_text">${okTextNode}</span></a>
+      <a href="javascript:;" class="btn_modal_submit cancelcall"><span class="btn_modal_submit_text">${cancelTextNode}</span></a>
     `;
   } else {
     btnHTML = `
-      <a href="#" class="btn_modal_submit primary okcall"><span class="btn_modal_submit_text">${okTextNode}</span></a>
+      <a href="javascript:;" class="btn_modal_submit primary okcall"><span class="btn_modal_submit_text">${okTextNode}</span></a>
     `;
   }
   
@@ -413,5 +413,33 @@ function mainContentsGap(){
       });
     }
     return Math.max.apply(null,dataArray)/2;
+  }
+}
+
+
+function responMaxTable(){
+  let data_render_brick_wrap = document.querySelectorAll(".data_render_brick_wrap");
+  action();
+  window.addEventListener("resize",()=>{
+    action();
+  });
+
+  function action(){
+    if(!!data_render_brick_wrap){
+      
+      data_render_brick_wrap.forEach((target)=>{
+        const thisTarget = target;
+        const thisElement = thisTarget.querySelectorAll(".data_thtext");
+        const thisArray = [];
+        
+        thisElement.forEach((elm)=>{
+          elm.style.removeProperty("width");
+          thisArray.push(elm.getBoundingClientRect().width);
+        });
+        thisElement.forEach((elm)=>{
+          elm.style.width = Math.max.apply(null,thisArray) + "px";
+        });
+      })
+    }
   }
 }
