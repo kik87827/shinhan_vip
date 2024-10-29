@@ -6,7 +6,38 @@
         <div class="page_wrap">
         @@include('./include/header.html')
 		<section class="middle_section">
-			내용이 들어갑니다.
+			<div class="detail_container">
+                <div class="detail_top_row">
+                    <div class="detail_top_wrap">
+                        <div class="detail_top_thum_cols"><img src="./assets/images/temp_detail_top.jpg" alt=""></div>
+                        <div class="detail_top_spec_cols">
+                            <div class="detail_bread_text">SOL ON 기프트</div>
+                            <div class="detail_spec_group">
+                                <div class="flag_row"><span class="flag_box">기프트</span></div>
+                                <div class="name_row"><h2 class="detail_name_para">명품 한우세트 ‘암소NO.09’ & 발뮤다 플레이트 프로</h2></div>
+                                <div class="summary_row">
+                                    <div class="summary_key">상품구성</div>
+                                    <div class="summary_value">
+                                        <ul class="summary_value_list">
+                                            <li>명품 한우세트(등심 0.6kg / 살치 0.6kg)</li>
+                                            <li>발뮤다 플레이트 프로</li>
+                                            <li>그리들&커버 세트</li>
+                                            <li>프로 전용 케이스</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail_btn_row"><a href="javascript:;" id="btn_app_call" class="btn_cardbox primary"><span class="btn_cardbox_text">서비스 신청하기</span></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail_middle_row">
+                    <img src="./assets/images/detail_temp_tong_01.jpg" alt="">
+                    <img src="./assets/images/detail_temp_tong_02.jpg" alt="">
+                    <img src="./assets/images/detail_temp_tong_03.jpg" alt="">
+                    <img src="./assets/images/detail_temp_tong_04.jpg" alt="">
+                </div>
+            </div>
 		</section>
 		@@include('./include/footer.html')
 	</div>
@@ -313,10 +344,10 @@
                 endPopup.popupShow(); // show
             }
 
-            /* document.querySelector("#btn_idpw_call").addEventListener("click", (e) => {
+            document.querySelector("#btn_app_call").addEventListener("click", (e) => {
                 e.preventDefault();
-                mainPopup.popupShow(); 
-            }); */
+                appPopup.popupShow(); 
+            });
         });
 
     </script>
