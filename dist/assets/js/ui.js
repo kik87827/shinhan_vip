@@ -228,23 +228,40 @@ class DesignPopup {
     this.layer_wrap_parent.append(this.selector);
     this.dimCheck();
   }
-  popupHide() {
+  popupHide(option) {
     let target = this.option.selector;
+    let instance_option = option;
     if (!!target) {
       this.selector.classList.remove("motion");
       if ("beforeClose" in this.option) {
         this.option.beforeClose();
       }
+      if ("beforeClose" in instance_option) {
+        instance_option.beforeClose();
+      }
       //remove
       this.selector.classList.remove("motion_end");
       setTimeout(() => {
         this.selector.classList.remove("active");
+        let closeTimer = 0;
+        if(closeTimer){
+          clearTimeout(closeTimer);
+          closeTimer = 0;
+        }else{
+          if ("closeCallback" in this.option) {
+            this.option.closeCallback();
+          }
+          closeTimer = setTimeout(()=>{
+            if ("closeCallback" in instance_option) {
+              instance_option.closeCallback();
+            }
+          },30);  
+        }
       }, 400);
       this.design_popup_wrap_active = document.querySelectorAll(".popup_wrap.active");
       this.dimCheck();
-      if ("closeCallback" in this.option) {
-        this.option.closeCallback();
-      }
+      
+      
       if (this.design_popup_wrap_active.length == 1) {
         this.domHtml.classList.remove("touchDis");
       }
