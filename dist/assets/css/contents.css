@@ -379,6 +379,10 @@ input.finput{flex:1;border:0;height:45px;outline:0;padding:0 0 0 10px; width:100
 .fiqure_item{}
 .fiqure_thum{position:relative;overflow:hidden;height:0;padding-bottom:60%;}
 .fiqure_thum > img{vertical-align: top;position:absolute;top:0;left:0;width:100%;height:100%;object-fit: cover;object-position: 50% 50%;}
+
+.fiqure_thum:after{display:block;content:'';width:100%;height:100%;background:#000;opacity:0;position:absolute;top:0;left:0;transition:.5s;}
+.fiqure_thum:hover:after{opacity:.5;}
+
 .fiqure_spec{margin-top:40px;}
 .flag_row{}
 .flag_row .flag{color:#fff; font-size:14px; padding:7px 12px; box-sizing: border-box; font-weight:500; display:inline-flex; align-items: center; justify-content: center; min-height:28px; background:#705ebf;}
