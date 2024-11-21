@@ -195,13 +195,14 @@
 .mv_inner_wrap{max-width:1200px;margin:0 auto;padding:100px 30px;}
 .mv_copy_group{}
 .mv_copy{font-size:32px; word-break:keep-all; color:#fff; font-weight:700; font-family: 'OneShinhan'; letter-spacing: -1px;}
-.sv_zone{background-position:50% 0;background-repeat:no-repeat;display:flex; align-items: center;background-color:#373169;min-height:367px;}
+.sv_zone{background-position:50% 0; position:relative;background-repeat:no-repeat;display:flex; align-items: center;background-color:#373169;min-height:367px;}
 .sv_zone.img_service{background-image:url("../images/bg_sv_service.jpg");min-height:408px;}
 .sv_zone.img_solon{background-image:url("../images/bg_sv_product.jpg");}
 .sv_zone.img_history{background-image:url("../images/bg_sv_history_vip.jpg");}
+.sv_zone.img_excellent{background-image:url("../images/bg_sv_customer.jpg");}
 .sv_inner{
     max-width:1260px;margin:0 auto;padding:30px; box-sizing: border-box; width:100%;
-    color:#fff;
+    color:#fff; position:relative; z-index:1;
 }
 .sv_title,
 .sv_copy{color:#ffffff;  font-family: 'OneShinhan'; letter-spacing: -1px; }
@@ -241,6 +242,11 @@
     .sv_zone.img_service{background-image:url("../images/bg_sv_service_mb.jpg"); background-position:0 100%;}
     .sv_zone.img_solon{background-image:url("../images/bg_sv_product_mb.jpg");}
     .sv_zone.img_history{background-image:url("../images/bg_sv_product_history.jpg");}
+    .sv_zone.img_excellent{background-image:url("../images/bg_sv_customer_mb.jpg");}
+    .sv_zone.mb_dim:before{
+        display:block;content:'';width:100%;height:100%;position:absolute;top:0;left:0; opacity:.4;
+        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    }
     .sv_inner{
         padding:30px 20px;
     }
@@ -788,3 +794,63 @@ textarea.fv_ta{font-size:14px;appearance: none;-webkit-appearance: none;resize:n
     .terms_indent_list{}
     .terms_indent_list > li{margin-bottom:10px;}
 }
+
+
+
+/* gallery */
+.gallery_block_wrap{}
+.gallery_block{margin-bottom:80px;padding-bottom:80px;border-bottom:1px solid #705ebf}
+.gallery_block:last-of-type{border-bottom:0;padding-bottom:0;margin-bottom:0;}
+.gallery_title_row{margin-bottom:38px;}
+.gallery_title{font-size:32px; color:#705ebf; font-weight:700; line-height:1;}
+.gallery_contents{}
+.gallery_item_list{display:flex;flex-wrap:wrap;gap:60px 36px;margin:0 -36px 0 0;}
+.gallery_item_list > li{flex:0 0 calc(50% - 36px);}
+.gallery_item_list > li:last-of-type{}
+.gallery_thum_row{padding-bottom:60.13745704467354%;position:relative;}
+.gallery_thum_row img{vertical-align: top;width:100%;height:100%;position:absolute;top:0;left:0;}
+.gallery_spec_row{margin-top:40px;}
+.gs_main_block{}
+.gs_main_title{font-size:28px; font-weight:700; color:#222222; line-height:1; margin-bottom:18px;}
+.gs_summary_list{}
+.gs_summary_list > li{display:flex;gap:5px;margin-bottom:5px;}
+.gs_summary_list > li:last-of-type{margin-bottom:0;}
+.gs_summay_cols{}
+.gs_summay_cols.define_th{flex:0; white-space: nowrap;}
+.gs_summay_cols.define_td{flex:1;}
+.gs_summary_key,
+.gs_summary_value{font-size:24px; color:#222222;}
+.gs_summary_key{ font-weight:700;}
+.gs_summary_value{}
+.gs_sub_block{background:#f3f2f9;padding:25px 20px; margin-top:20px;}
+.gs_bullet_list{font-size:20px; color:#666666; font-weight:500; letter-spacing: -0.5px; }
+.gs_bullet_list > li{position:relative;padding-left:13px;margin-bottom:5px;}
+.gs_bullet_list > li:last-of-type{margin-bottom:0;}
+.gs_bullet_list > li:before{display:block;content:'-';position:absolute;top:0;left:0;}
+.clause_para_wrap{margin-top:40px;}
+.clause_para_list{font-size:24px; color:#555555; font-weight: 300; line-height:1.3;}
+.clause_para_list > li{position:relative;padding-left:15px;margin-bottom:7px;}
+.clause_para_list > li:before{display:block;content:'-'; position:absolute;top:0;left:0;}
+.clause_para_list > li:last-of-type{margin-bottom:0;}
+@media (max-width:1280px){
+    
+}
+@media (max-width:767px){
+    .gallery_block{margin-bottom:40px;padding-bottom:40px;}
+    .gallery_title_row{margin-bottom:20px;}
+    .gallery_title{font-size:20px;}
+    .gallery_item_list{gap:30px 20px;margin:0 -20px 0 0;}
+    .gallery_item_list > li{flex:0 0 calc(50% - 20px);}
+    .gallery_spec_row{margin-top:20px;}
+    .gs_main_title{font-size:16px;margin-bottom:12px;}
+    .gs_summary_key,
+    .gs_summary_value{font-size:14px;}
+    .gs_summary_value{}
+    .gs_sub_block{padding:15px 10px; margin-top:20px;}
+    .gs_bullet_list{font-size:14px;letter-spacing: 1; }
+    .gs_bullet_list > li{padding-left:10px;}
+    .clause_para_wrap{margin-top:20px;}
+    .clause_para_list{font-size:14px;}
+    .clause_para_list > li{padding-left:10px;}
+}
+/* // gallery */
