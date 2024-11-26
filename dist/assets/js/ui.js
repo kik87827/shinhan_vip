@@ -280,6 +280,8 @@ function designModal(option) {
   let showNum = 0;
   let okTextNode = option.okText ?? '확인';
   let cancelTextNode = option.cancelText ?? '취소';
+  let closeBtnDisplay = option.closeDisplay ?? true;
+  let submitBtnDisplay = option.submitDisplay ?? true;
   modalGroupCreate.classList.add("modal_wrap_parent");
 
   if (!modal_wrap_parent && !document.querySelector(".modal_wrap_parent")) {
@@ -336,41 +338,59 @@ function designModal(option) {
     });
   }, 10);
 
+  let btn_modal_submit_wrap = modal_item.querySelector(".btn_modal_submit_wrap");
   let btn_modal_submit = modal_item.querySelectorAll(".btn_modal_submit");
   let btn_modal_close = modal_item.querySelectorAll(".btn_modal_close");
+  if(!submitBtnDisplay){
+    modal_item.querySelector(".modal_box_item").classList.add("submit_not");
+  }
   if (!!btn_modal_submit) {
     btn_modal_submit.forEach((item) => {
       let eventIs = false;
-      if (eventIs) {
-        item.removeEventListener("click");
-      }
-      item.addEventListener("click", (e) => {
-        let thisTarget = e.currentTarget;
-        closeAction();
-        if (thisTarget.classList.contains("okcall")) {
-          if (option.okcallback) {
-            option.okcallback();
-          }
-        } else if (thisTarget.classList.contains("cancelcall")) {
-          if (option.cancelcallback) {
-            option.cancelcallback();
-          }
+
+      if(!submitBtnDisplay){
+        item.remove();
+        btn_modal_submit_wrap.remove();
+      }else{
+        if (eventIs) {
+          item.removeEventListener("click");
         }
-        eventIs = true;
-      });
+        item.addEventListener("click", (e) => {
+          let thisTarget = e.currentTarget;
+          closeAction();
+          if (thisTarget.classList.contains("okcall")) {
+            if (option.okcallback) {
+              option.okcallback();
+            }
+          } else if (thisTarget.classList.contains("cancelcall")) {
+            if (option.cancelcallback) {
+              option.cancelcallback();
+            }
+          }
+          eventIs = true;
+        });
+      }
+
+     
     });
   }
+  if(!closeBtnDisplay){
+    modal_item.querySelector(".modal_box_item").classList.add("close_not");
+  }
   if(!!btn_modal_close){
-    console.log(btn_modal_close);
     btn_modal_close.forEach((item)=>{
       let eventIs = false;
-      if (eventIs) {
-        item.removeEventListener("click");
+      if(!closeBtnDisplay){
+        item.remove();
+      }else{
+        if (eventIs) {
+          item.removeEventListener("click");
+        }
+        item.addEventListener("click", (e) => {
+          closeAction();
+          eventIs = true;
+        });
       }
-      item.addEventListener("click", (e) => {
-        closeAction();
-        eventIs = true;
-      });
     })
   }
 
@@ -509,4 +529,46 @@ function reformFunc(){
 			}
 		});
 	}).resize();
+}
+
+
+function boxTab(target){
+  const boxtab = document.querySelectorAll(`${target} .boxtab`);
+  console.log(target);
+  if(!!boxtab){
+    boxtab.forEach((tabItem)=>{
+      tabItem.addEventListener("click",(e)=>{
+        e.preventDefault();
+        let thisItem = e.currentTarget;
+        let thisNotItem = thisItem.closest(".boxtab_list").querySelectorAll(".boxtab");
+        let thisTarget = document.querySelector(thisItem.getAttribute("href")) ?? null;
+        let thisNotTarget = thisTarget.closest(".boxtab_cont_wrap").querySelectorAll(".boxtab_cont") ?? null;
+
+
+
+        if(!!thisNotItem){
+          thisNotItem.forEach((notItem)=>{
+            if(thisItem !== notItem){
+              notItem.classList.remove("active");
+            }
+          });
+        }
+
+        if(!!thisNotTarget){
+          thisNotTarget.forEach((notItem)=>{
+            if(thisTarget !== notItem){
+              notItem.classList.remove("active");
+            }
+          });
+        }
+
+        if(!!thisItem){
+          thisItem.classList.add("active");
+        }
+        if(!!thisTarget){
+          thisTarget.classList.add("active");
+        }
+      });
+    });
+  }
 }

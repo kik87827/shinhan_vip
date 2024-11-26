@@ -25,43 +25,97 @@
 					<div class="title_row">
 						<h1 class="single_title">로그인</h1>
 					</div>
-					<div class="contents_row">
+					<div class="contents_row" id="boxtab_script_ui">
+						<div class="boxtab_wrap">
+							<ul class="boxtab_list">
+								<li><a href="#cont01" class="boxtab active"><span class="boxtab_text">고객전용</span></a></li>
+								<li><a href="#cont02" class="boxtab"><span class="boxtab_text">FC전용</span></a></li>
+							</ul>
+						</div>
 						<form>
-							<div class="field_brick">
-								<ul class="field_input_list">
-									<li>
-										<div class="finput_item">
-											<i class="ico shape_id"></i>
-											<input type="text" class="finput" placeholder="ID">
-										</div>
-									</li>
-									<li>
-										<div class="finput_item">
-											<i class="ico shape_pw"></i>
-											<input type="password" class="finput" placeholder="PW">
-											<i class="ico shape_key"></i>
-										</div>
-									</li>
-								</ul>
+							<div class="boxtab_cont_wrap">
+								<div class="boxtab_cont active" id="cont01">
+									<div class="field_brick">
+										<ul class="field_input_list">
+											<li>
+												<div class="finput_item">
+													<i class="ico shape_id"></i>
+													<input type="text" class="finput" placeholder="ID">
+												</div>
+											</li>
+											<li>
+												<div class="finput_item">
+													<i class="ico shape_pw"></i>
+													<input type="password" class="finput" placeholder="PW">
+													<i class="ico shape_key"></i>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="props_brick">
+										<ul class="props_item_list">
+											<li>
+												<div class="props_item">
+													<input type="checkbox" class="props_form" id="id_item">
+													<label for="id_item" class="props_label">로그인 정보저장</label>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="submit_brick">
+										<a href="#" class="btn_field_submit">로그인</a>
+									</div>
+									<div class="submit_guide_wrap">
+										<p class="submit_guide_copy">*FC는 FC전용 버튼을 클릭 후 이용해주세요.</p>
+									</div>
+									<div class="else_btn_brick">
+										<a href="#" class="btn_field_text">로그인 정보확인</a>
+									</div>
+								</div>
+								<div class="boxtab_cont" id="cont02">
+									<div class="field_brick">
+										<ul class="field_input_list">
+											<li>
+												<div class="finput_item">
+													<i class="ico shape_id"></i>
+													<input type="text" class="finput" placeholder="ID FC">
+												</div>
+											</li>
+											<li>
+												<div class="finput_item">
+													<i class="ico shape_pw"></i>
+													<input type="password" class="finput" placeholder="PW FC">
+													<i class="ico shape_key"></i>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="props_brick">
+										<ul class="props_item_list">
+											<li>
+												<div class="props_item">
+													<input type="checkbox" class="props_form" id="id_item2">
+													<label for="id_item2" class="props_label">로그인 정보저장</label>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="submit_brick">
+										<a href="#" class="btn_field_submit">로그인</a>
+									</div>
+									<div class="submit_guide_wrap">
+										<p class="submit_guide_copy">*FC는 FC전용 버튼을 클릭 후 이용해주세요.</p>
+									</div>
+									<div class="else_btn_brick">
+										<a href="#" class="btn_field_text">로그인 정보확인</a>
+									</div>
+								</div>
 							</div>
-							<div class="props_brick">
-								<ul class="props_item_list">
-									<li>
-										<div class="props_item">
-											<input type="checkbox" class="props_form" id="id_item">
-											<label for="id_item" class="props_label">로그인 정보저장</label>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<div class="submit_brick">
-								<a href="#" class="btn_field_submit">로그인</a>
-							</div>
-							<div class="else_btn_brick">
-								<a href="#" class="btn_field_text">로그인 정보확인</a>
-							</div>
-							<div class="bottom_logo_brick">
-								<img src="./assets/images/login_logo.png" alt="신한라이프">
+							<div class="login_else_wrap">
+
+								<div class="bottom_logo_brick">
+									<img src="./assets/images/login_logo.png" alt="신한라이프">
+								</div>
 							</div>
 						</form>
 					</div>
@@ -120,6 +174,9 @@
 				    e.preventDefault();
 				    loginPopup.popupShow(); // show
 				}); */
+
+				// tab 
+				boxTab("#boxtab_script_ui");
 			});
 		</script>
 	</div>

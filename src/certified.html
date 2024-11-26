@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./include/head.html')
+
+<body class="front_body">
+    <div class="page_wrap">
+        <div class="bg_single_global" style="background-image:url(./assets/images/bg_login.jpg)"></div>
+        <div class="single_container">
+            <div class="single_inner">
+                <div class="single_box type2">
+                    <div class="single_sub_title_row">
+                        <h1 class="single_sub_title">SOL ON 인증 요청</h1>
+                        <p class="single_sub_title_copy">시스템에 입력되어 있는 휴대폰 번호로 <br>인증번호가 발송됩니다.</p>
+                    </div>
+                    <div class="single_sub_content_row">
+                        <div class="chain_item_box">
+                            <input type="text" class="chain_input" placeholder="인증코드 입력">
+                            <div class="chain_count">00:00</div>
+                            <a href="#" class="btn_chain_inline_box"><span class="chain_inline_text">확인</span></a>
+                        </div>
+                        <div class="submit_brick">
+                            <a href="#" class="btn_field_submit">인증번호 요청하기</a>
+                        </div>
+                        <div class="else_btn_brick">
+                            <a href="#" class="btn_field_text">인증번호 재발송</a>
+                        </div>
+                        <div class="bottom_logo_brick">
+                            <img src="./assets/images/login_logo.png" alt="신한라이프">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                
+
+                // 퍼블 확인용
+                let url = window.location.href.split('?')[1];
+                let url_2 = url !== undefined ? url.split('#')[0] : null;
+
+                if (url_2 === "modal_01") {
+                    designModal({
+                        message : "<strong class='message_dep01_word'>인증이 완료되었습니다.</strong>",
+                        closeDisplay : false,
+                        okcallback(){
+                            console.log('okcallback');
+                        },
+                        cancelcallback(){
+                            console.log('cancelcallback');
+                        }
+                    });
+                } else if (url_2 === "modal_02") {
+                    designModal({
+                        message : "<strong class='message_dep01_word'>인증이 완료되었습니다.</strong><span class='message_dep02_word'>메인화면으로 이동합니다.</span>",
+                        submitDisplay : false,
+                        closeDisplay : false,
+                        okcallback(){
+                            console.log('okcallback');
+                        },
+                        cancelcallback(){
+                            console.log('cancelcallback');
+                        }
+                    });
+                } else if (url_2 === "modal_error") {
+                    designModal({
+                        message : "<strong class='message_dep01_word'>SOL ON 인증 오류</strong><span class='message_dep02_word'>인증번호를 잘못 입력하였습니다.<br>다시 확인해주세요.</span>",
+                        submitDisplay : false,
+                        okcallback(){
+                            console.log('okcallback');
+                        },
+                        cancelcallback(){
+                            console.log('cancelcallback');
+                        }
+                    });
+                }
+            });
+
+        </script>
+    </div>
+</body>
+
+</html>
