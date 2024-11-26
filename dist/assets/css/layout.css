@@ -149,8 +149,9 @@ li.active .nav_item_text,
 .bg_single_global{position:fixed;top:0;left:0;width:100%;height:100%;background-position: 50% 50%;background-size:cover;background-repeat:no-repeat;}
 .single_container{position:relative; z-index:5;display:flex; min-height:calc(var(--vh, 1vh) * 100); justify-content: center; align-items: center;}
 .single_inner{padding:50px; width:100%; box-sizing: border-box;}
-.single_box{background:#fff; padding:40px 23px; border-radius:18px; border:1px solid #dddddd;max-width:400px;margin:0 auto; text-align: center; box-sizing: border-box;}
+.single_box{background:#fff; padding:40px 23px; border-radius:18px; border:1px solid #dddddd;max-width:400px;margin:0 auto; text-align: center; box-sizing: border-box; position:relative;}
 .single_box.type2{}
+.single_box.has_close .single_sub_title{padding:0 60px;}
 .single_title{font-family: 'OneShinhan'; font-weight:700; letter-spacing: -0.5px; font-size:32px;}
 .single_box .field_brick{}
 .single_box .props_brick{text-align: left; margin-top:20px;}
@@ -190,7 +191,7 @@ li.active .nav_item_text,
     .single_box .title_row{margin-bottom:20px;}
     .single_box .bottom_logo_brick > img{max-width:100px;}
 
-    .single_sub_title{font-size:20px;}
+    .single_sub_title{font-size:20px;padding:0 20px;}
     .single_sub_title_copy{font-size:15px;margin-top:10px;}
     .single_sub_content_row{margin-top:15px;}
 
